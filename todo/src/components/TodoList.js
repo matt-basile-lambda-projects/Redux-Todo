@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import TodoItem from './TodoItem'
 import {addNewTodo} from '../actions'
 import {toggleTodo} from '../actions'
+import {deleteTodo} from '../actions'
+
 
 class TodoList extends React.Component{
     constructor(props){
@@ -15,7 +17,7 @@ class TodoList extends React.Component{
         return(
             <div>
                 {this.props.todos.map(todo => {
-                    return <TodoItem toggleTodo={this.props.toggleTodo} todo={todo} key={todo.value}/>
+                    return <TodoItem toggleTodo={this.props.toggleTodo} deleteTodo={this.props.deleteTodo} todo={todo} key={todo.value}/>
                 })}
                 <form onSubmit={e =>{e.preventDefault()
                     if(!input.value.trim()){
@@ -44,5 +46,5 @@ const mapStateToProps = state => {
 
   export default connect(
       mapStateToProps,
-      {addNewTodo, toggleTodo}
+      {addNewTodo, toggleTodo, deleteTodo}
   )(TodoList);

@@ -6,3 +6,20 @@
   text-decoration: line-through;
   color: red;
 }
+
+.todo-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.delete{
+  margin: 10px;
+  font-weight: 800;
+  background-color: red;
+  color: white;
+  padding: 7px 10px;
+  border-radius: 50%;
+}
+.delete:hover{
+  background-color: firebrick;
+}
